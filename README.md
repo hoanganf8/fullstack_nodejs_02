@@ -17,3 +17,25 @@ Phân biệt đường dẫn tương đối và tuyệt đối
 ../duong-dan
 
 /block-elements/ex02.html
+
+# Form trong HTML
+
+## Form là gì?
+
+- Biểu mẫu cho phép người dùng nhập liệu để gửi lên Server
+- Trong 1 trang có thể có nhiều form
+- Form không được lồng nhau
+- Trong form sẽ có nhiều trường (field)
+
+## Cấu tạo của form
+
+<form>
+    Danh sách các trường
+</form>
+
+Các thuộc tính trong thẻ form
+
+- action: URL Request
+- method: HTTP Method
++ GET (mặc định)
++ POST

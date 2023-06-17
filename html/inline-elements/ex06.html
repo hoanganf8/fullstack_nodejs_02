@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <div>
+        <label for="fullname"> Họ và tên </label>
+        <input
+          id="fullname"
+          type="text"
+          name="fullname"
+          placeholder="Họ và tên..."
+          required
+        />
+      </div>
+
+      <div>
+        <label for="fullname"> Email </label>
+        <input id="email" type="email" name="email" placeholder="Email..." />
+      </div>
+
+      <div>
+        <label for="password"> Mật khẩu </label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          placeholder="Mật khẩu..."
+        />
+      </div>
+
+      <div>
+        <label for="age"> Tuổi </label>
+        <input
+          id="age"
+          type="number"
+          name="age"
+          placeholder="Tuổi..."
+          min="18"
+          max="30"
+          step="0.1"
+        />
+      </div>
+
+      <div>
+        <label> Giới tính </label>
+        <label>
+          <input type="radio" name="gender" value="0" /> Không xác định
+        </label>
+        <label>
+          <input type="radio" name="gender" value="1" checked /> Nam
+        </label>
+        <label> <input type="radio" name="gender" value="2" /> Nữ </label>
+      </div>
+
+      <div>
+        <label> Bạn biết đến F8 qua nguồn nào? </label>
+        <label>
+          <input type="checkbox" name="source" value="unknown" /> Không biết
+        </label>
+        <label>
+          <input type="checkbox" name="source" value="google" checked /> Google
+        </label>
+        <label>
+          <input type="checkbox" name="source" value="facebook" /> Facebook
+        </label>
+      </div>
+
+      <!-- <div>
+        <label for="avatar"> Avatar </label>
+
+        <input id="avatar" type="file" name="avatar" />
+      </div>
+
+      <div>
+        <label for="birthday"> Sinh nhật </label>
+        <input id="birthday" type="date" name="birthday" />
+      </div>
+
+      <div>
+        <label for="price"> Giá </label>
+        <input id="price" type="range" name="price" value="0" step="0.1" />
+      </div>
+
+      <div>
+        <label for="message"> Tin nhắn </label>
+        <textarea
+          name="message"
+          id="message"
+          cols="30"
+          rows="10"
+          placeholder="Tin nhắn..."
+        ></textarea>
+      </div> -->
+
+      <div>
+        <label for="provinces"> Tỉnh/Thành phố </label>
+        <select name="provinces" id="provinces" multiple>
+          <option value="" hidden>Chọn Tỉnh/Thành phố</option>
+          <optgroup label="Miền Bắc">
+            <option value="1">Hà Nội</option>
+            <option value="2">Nam Định</option>
+          </optgroup>
+
+          <optgroup label="Miền Trung">
+            <option value="3">Thanh Hóa</option>
+          </optgroup>
+          <optgroup label="Miền Nam">
+            <option value="4">Hồ Chí Minh</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <button type="submit">Đăng ký</button>
+      <button type="reset">Nhập lại</button>
+      <button type="button">Button</button>
+    </form>
+  </body>
+</html>
