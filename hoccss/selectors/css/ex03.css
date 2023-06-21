@@ -1,0 +1,7 @@
+.first h2 ~ h3{
+    color: red;
+}
+
+.last h2 ~ h3{
+    color: green;
+}

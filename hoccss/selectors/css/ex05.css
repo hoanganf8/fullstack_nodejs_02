@@ -1,0 +1,7 @@
+/* p + h2, p + h2 + h2{
+    color: red;
+} */
+
+h2 + h2{
+    color: red;
+}

@@ -1,0 +1,7 @@
+/* *{
+    color: red;
+} */
+
+.content > *{
+    border: 1px solid red;
+}

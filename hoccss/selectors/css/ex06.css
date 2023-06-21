@@ -1,0 +1,31 @@
+/* ul li a[target]{
+    color: red;
+} */
+
+/* ul li a[href^="https://fullstack.edu.vn"]{
+    color: red;
+} */
+
+ul li a[href*="fullstack.edu.vn"]{
+    color: red;
+}
+
+.item-1{
+    color: green;
+}
+
+.item-2{
+    color: red;
+}
+
+.item-3{
+    color: blueviolet;
+}
+
+.item-4{
+    color: yellow;
+}
+
+[class^="item-"]{
+    border: 1px solid red;
+}

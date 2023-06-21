@@ -1,0 +1,38 @@
+/* .title::before{
+    content: 'ABC';
+}
+
+.title::after{
+    content: 'A';
+} */
+
+.title::after{
+    content: "";
+    display: block;
+    height: 4px;
+    width: 50px;
+    background: red;
+}
+
+p::first-line{
+    color: red;
+}
+
+p::first-letter{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+p::selection{
+    color: yellow;
+    background: black;
+}
+
+.email{
+    color: red;
+}
+
+.email::placeholder{
+    color: red;
+    font-style: italic;
+}

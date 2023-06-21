@@ -1,0 +1,3 @@
+p ~ ul, p ~ .children ul{
+    color: red;
+}
