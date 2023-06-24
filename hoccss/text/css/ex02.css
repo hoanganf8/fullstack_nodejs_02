@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Roboto";
+    src: url('../fonts/Roboto-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url('../fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url('../fonts/Roboto-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url('../fonts/Roboto-Bold.ttf');
+    font-weight: 700;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,400&display=swap'); */
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.content{
+    font-size: 20px;
+    line-height: 1.2;
+}

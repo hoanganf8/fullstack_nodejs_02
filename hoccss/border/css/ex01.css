@@ -1,0 +1,46 @@
+.box{
+    /* border-width: 1px;
+    border-style: double;
+    border-color: red; */
+    /* border: 1px solid red; */
+    /* border-left: 1px solid red;
+    border-right: 1px solid green;
+    border-top: 1px solid blue;
+    border-bottom: 1px solid violet; */
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+
+    border-left-style: solid;
+    border-right-style: dashed;
+    border-bottom-style: dotted;
+    border-top-style: double;
+
+    /* border-top-color: red;
+    border-left-color: green;
+    border-right-color: blueviolet;
+    border-bottom-color: aqua; */
+    border-color: red green blueviolet aqua;
+}
+
+/*
+style: solid | dashed | dotted | double
+*/
+
+body {
+    background: red;
+}
+
+.content {
+    width: 0;
+    height: 0;
+    border-width: 30px;
+    border-style: solid;
+    border-color: blueviolet transparent  transparent  transparent;
+}
+
+/*
+inline replace: img, input
+inline non-replace
+*/
