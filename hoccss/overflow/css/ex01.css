@@ -1,0 +1,12 @@
+.box {
+    width: 200px;
+    height: 250px;
+    border: 1px solid red;
+    /* overflow: auto; */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.box ul {
+    width: 500px;
+}

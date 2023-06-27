@@ -1,0 +1,21 @@
+/* .box:hover {
+    opacity: .5;
+} */
+
+.box img:hover {
+    /* opacity: .5; */
+    /* filter: grayscale(.5); */
+    filter: grayscale(42%) sepia(27%) blur(3px) brightness(79%) hue-rotate(108deg) saturate(345%);
+}
+
+.galleries img {
+    filter: grayscale(1);
+}
+.galleries img:hover {
+    filter: initial;
+}
+
+.map iframe {
+    width: 100%;
+    filter: grayscale(1);
+}

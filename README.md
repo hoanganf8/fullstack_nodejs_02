@@ -39,3 +39,7 @@ Các thuộc tính trong thẻ form
 - method: HTTP Method
 + GET (mặc định)
 + POST
+
+Chrome, Safari: -webkit-
+Opera: -o-
+Firefox: -moz-

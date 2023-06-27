@@ -1,0 +1,31 @@
+.box {
+    border: 1px solid red;
+    width: 200px;
+    padding: 30px;
+    /* margin: 30px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* 
+.first, .last {
+    border: 1px solid red;
+}
+
+.first {
+    margin-bottom: 10px;
+}
+
+.last {
+    margin-top: 20px;
+} */
+
+.banner{
+    background: green;
+    color: #fff;
+    /* border: 1px solid transparent; */
+    display: flex;
+}
+
+.banner h1 {
+    margin: 30px 0;
+}

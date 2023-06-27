@@ -1,0 +1,46 @@
+/* .content {
+    width: 600px;
+    height: 400px;
+    background: green;
+    max-width: 500px;
+}
+ */
+
+* {
+    padding: 0;
+    margin: 0;
+ }
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.box .image-box {
+    display: inline-block;
+    width: 30%;
+} 
+
+.box .image-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    width: 500px;
+    height: 400px;
+    background: green;
+    min-width: 600px;
+}
+
+.products {
+    display: flex;
+}
+
+.products .product {
+    width: 30%;
+
+}
+
+.products .product p {
+    min-height: 36px;
+}
