@@ -1,0 +1,57 @@
+body {
+  height: 2000px;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid red;
+  margin: 20px auto;
+  position: relative;
+}
+
+.box .item {
+  padding: 10px;
+  border: 1px solid red;
+  background: green;
+  width: 120px;
+  color: #fff;
+}
+
+.box .item:nth-child(2) {
+  position: relative;
+  left: 10px;
+  top: 20px;
+  z-index: 1;
+  /* width: auto; */
+  /* height: 50px; */
+  /* position: absolute; */
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  /* inset: 0; */
+  /* position: fixed;
+  right: 0;
+  bottom: 0; */
+}
+.box .item:nth-child(3) {
+  /* margin-top: -20px;
+  margin-left: 10px;
+  background: red; */
+  position: relative;
+}
+
+/*
+position: Thay đổi vị trí của 1 element
+- relative: Vị trí tương đối
+- absolute: Vị trí tuyệt đối
+- fixed: Vị trí cố định khi scroll
+- static: Mặc định, không có position
+
+Các thuộc tính liên quan (Chỉ hoạt động khi có position - Trừ static)
+- top
+- left
+- right
+- bottom
+- z-index
+*/

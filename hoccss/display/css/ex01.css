@@ -1,0 +1,23 @@
+.box {
+  border: 1px solid red;
+  /* display: inline-block; */
+  visibility: visible;
+}
+
+/*
+- inline
+- block
+
+- inline-block: Sự kết hợp giữa inline và block
++ inline: nằm trên 1 dòng, chiều rộng mặc định theo nội dung
++ block: set width, height, padding-top, padding-bottom, margin-top, margin-bottom
+
+Thuộc tính display có rất nhiều các giá trị phức tạp: 
+- flex
+- inline-flex
+- table
+- table-cell
+- list-item
+....
+=> Tách thành chuyên đề riêng
+*/

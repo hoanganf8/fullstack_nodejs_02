@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.product {
+  width: 200px;
+  margin: 30px auto;
+  border: 1px solid #efefef;
+  position: relative;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product .info {
+  padding: 10px;
+}
+
+.product .info h3 {
+  font-size: 1.2rem;
+}
+
+.product .info h3 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.product .sale {
+  background: rgba(255, 0, 0, 0.757);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  padding: 2px 5px;
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+}
+
+.product .image {
+  position: relative;
+}
