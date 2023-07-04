@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.facebook {
+  color: red;
+  /* font-size: 2rem; */
+}
+
+.social {
+  list-style: none;
+  width: 300px;
+  margin: 30px auto;
+}
+
+.social li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.social li a::before {
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 5px;
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+}

@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  border: 1px solid red;
+  width: 300px;
+  margin: 30px auto;
+}
+
+.box ul {
+  /* list-style-position: inside;
+  list-style-type: upper-alpha; */
+  /* list-style: inside upper-roman; */
+  list-style: none;
+}
+
+/* .box ul li {
+  background: url("../images/angle-right-icon.png") no-repeat left center / 16px;
+  padding-left: 16px;
+} */
+
+.box ul li::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/angle-right-icon.png") no-repeat left center / 16px;
+  /* float: left;
+  margin-top: 3px; */
+  vertical-align: middle;
+}
+
+.box ul li {
+  line-height: 2;
+}

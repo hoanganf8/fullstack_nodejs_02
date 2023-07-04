@@ -1,0 +1,43 @@
+.check-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  position: relative;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+.checkbox label {
+  display: block;
+  line-height: 1.5;
+}
+
+.check-box::before {
+  display: none;
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  border: #fff solid;
+  border-width: 0px 1px 1px 0px;
+  rotate: 45deg;
+  left: 35%;
+  top: 15%;
+}
+
+input[type="checkbox"]:checked + label .check-box::before {
+  display: inline-block;
+}
+
+input[type="checkbox"]:checked + label .check-box {
+  background: green;
+}
+
+input[type="checkbox"]:disabled + label .check-box {
+  background: gray;
+}
+
+input[type="checkbox"]:disabled + label {
+  color: gray;
+}
