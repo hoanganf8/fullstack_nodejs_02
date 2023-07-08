@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.box {
+  border: 1px solid red;
+  width: 400px;
+  margin: 30px auto;
+}
+
+.box h2 {
+  /* transition-property: padding-left, color;
+  transition-duration: 2s; */
+  /* transition-delay: 2s; */
+  /* transition-timing-function: cubic-bezier(0.5, 0.9, 0.5, 0.9); */
+  transition: 0.4s 1s linear;
+  transition-property: padding-left, color;
+}
+
+.box h2:hover {
+  padding-left: 100px;
+  color: red;
+}
+
+/*
+ease: Chậm - Nhanh - Chậm
+linear: Tốc độ đều
+ease-in: Tốc độ tăng dần
+ease-in: Tốc độ giảm dần
+ease-in-out: Chậm - Nhanh - Chậm
+cubic-bezier(p1, p2, p3, p4)
+*/

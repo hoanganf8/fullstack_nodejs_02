@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.songs {
+  width: 300px;
+  border: 1px solid red;
+  margin: 30px auto;
+  padding: 15px;
+  counter-reset: song-item;
+}
+
+.songs .song-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  counter-increment: song-item;
+}
+
+.songs .song-item::before {
+  content: "#" counter(song-item);
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: left;
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+/*
+Tạo bộ đếm
+1. Khởi tạo bộ đếm mới
+counter-reset: tenbodem;
+
+2. Thực hiện đếm
+counter-increment: tenbodem;
+
+3. Hiển thị giá trị đếm
+counter(tenbodem)
+*/
