@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  position: relative;
+  color: green;
+  overflow: hidden;
+}
+
+.title > span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 100%;
+  color: red;
+  overflow: hidden;
+  animation: change-color 1s linear infinite;
+}
+
+.title > span > span {
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes change-color {
+  50% {
+    top: 0;
+  }
+}

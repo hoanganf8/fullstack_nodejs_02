@@ -1,0 +1,34 @@
+/*
+Biến Trong CSS
+- Biến toàn cục (Global Variable)
+- Biến cục bộ (Local Variable)
+*/
+
+/* Khai báo biến toàn cục */
+:root {
+  --primary-color: red;
+  --secondary-color: green;
+  --font-family: Roboto, sans-serif;
+}
+
+body {
+  color: var(--primary-color);
+}
+
+.box {
+  --font-size: 18px;
+  --heading-size: 25px;
+  --font-style: italic;
+  --secondary-color: blue;
+  font-size: var(--font-size);
+}
+
+.box h1 {
+  color: var(--secondary-color);
+  font-size: var(--heading-size);
+}
+
+.box p {
+  font-style: var(--font-style);
+  color: var(--secondary-color);
+}

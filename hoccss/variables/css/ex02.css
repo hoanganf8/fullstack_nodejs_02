@@ -1,0 +1,13 @@
+.box {
+  --color: green;
+  --color-hover: blue;
+}
+
+.box h2 {
+  color: var(--color);
+}
+
+.box h2:hover {
+  /* color: var(--color-hover); */
+  --color: var(--color-hover);
+}
