@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: aqua;
+}
+.content {
+  color: red;
+}
+
+/* @media screen and (max-width: 1200px) {
+  body {
+    background: yellow;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background: burlywood;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  body {
+    background: #fff;
+  }
+} */
+
+@media screen and (min-width: 576px) {
+  body {
+    background: burlywood;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background: yellow;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background: #fff;
+  }
+}
