@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../scss/ex06.scss","../scss/_mixins.scss"],"names":[],"mappings":"AAEA;EACI;EACA;EACA;;;AAGJ;ECaI;EACA,SDbiB;ECcjB;EACA;EDdA;EACA;;ACeA;EACI;EACA,aDnBa;;AAIjB;EACI;EACA;;ACwBA;ED/BR;ICaI;IACA,SDFqB;ICGrB;IACA;;EAEA;IACI;IACA,aDRiB;;;ACcjB;ED1BR;ICaI;IACA,SDGqB;ICFrB;IACA;;EAEA;IACI;IACA,aDHiB","file":"ex06.css"}

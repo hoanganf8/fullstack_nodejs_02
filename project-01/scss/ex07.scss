@@ -1,0 +1,18 @@
+@import 'mixins';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    @include size(200px);
+    background-color: red;
+    position: relative;
+    @include center(margin);
+    .item {
+    // @include size(100%);
+    color:white;
+    }
+}

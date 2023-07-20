@@ -1,0 +1,100 @@
+@import 'variables';
+@import 'fonts';
+@import 'colors';
+
+.card {
+    // Local
+    $black-color: #000;
+
+    width: 200px;
+    height: 200px;
+    background: $black-color;
+    color: $text-color;
+
+    &-title {
+        $text-color: red;
+
+        font-size: 20px;
+        color: $text-color;
+        background: $black-color;
+    }
+    
+    &-img {
+        color: $text-color;
+        width: 100%;
+    }
+    
+    &-desc {
+        font-size: 16px;
+    }
+
+    &:hover {
+        font-size: #000;
+    }
+
+    &::before {
+        content: "";
+    }
+
+    &:hover::after {
+        color: red;
+    }
+
+    &::after:hover {
+        color: green;
+        font: {
+            size: 10px;
+            family: system-ui;
+            weight: 600;
+        }
+    }
+}
+
+// BEM example
+.card {
+    width: 200px;
+
+    &--success {
+
+    }
+    
+    &__title {
+        font-size: 12px;
+
+        &--big {
+            font-size: 50px;
+        }
+    }
+}
+
+.news {
+    &-list {
+        display: flex;
+    }
+
+    &-item {
+        margin: 10px;
+    }
+    
+    &-item:hover {
+        background-color: #ccc;
+    }
+
+    &-item__thumb {
+        width: 100%;
+    }
+
+    &-item__title {
+        font-size: 20px;
+        font-weight: 600;
+
+        &::before {
+            border-left: 2px solid red;
+        }
+    }
+    
+    &-item__desc {
+        font-size: 16px;
+        font-style: italic;
+    }
+}

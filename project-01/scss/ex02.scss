@@ -1,0 +1,37 @@
+body {
+    font-family: system-ui;
+}
+
+// Extend
+// .btn {
+//     border: none;
+//     outline: none;
+//     background: #ccc;
+//     padding: 10px 20px;
+//     border-radius: 5px;
+// }
+
+%btn {
+    border: none;
+    outline: none;
+    background: #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    @extend %btn;
+    color: #fff;
+    background: blue;
+}
+
+.btn-success {
+    @extend %btn;
+    color: #fff;
+    background: green;
+}
+
+.btn-warning {
+    @extend %btn;
+    background: orange;
+}

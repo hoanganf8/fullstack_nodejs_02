@@ -1,0 +1,19 @@
+@import 'mixins';
+
+// Mixins
+.box-1 {
+    @include size(100px);
+    background: orange;
+}
+
+.box-2 {
+    @include size(150px);
+    background: green;
+    @include rounded(20px, 30px, 50px, 60px);
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

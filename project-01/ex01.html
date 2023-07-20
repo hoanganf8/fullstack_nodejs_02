@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- BEM: block__element--modifier -->
+    <div class="card">
+        <img src="" alt="" class="card__img">
+        <h3 class="card__title">Lorem, ipsum.</h3>
+        <p class="card__desc">Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast toast--success">
+        <img src="" alt="" class="toast__icon">
+        <div class="toast__body">
+            <h3 class="toast__title">Lorem, ipsum dolor.</h3>
+            <p class="toast__message">Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+
+    <div class="toast toast--error">
+        <img src="" alt="" class="toast__icon">
+        <div class="toast__body">
+            <h3 class="toast__title">Lorem, ipsum dolor.</h3>
+            <p class="toast__message">Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+
+    <div class="toast toast--info">
+        <img src="" alt="" class="toast__icon">
+        <div class="toast__body">
+            <h3 class="toast__title">Lorem, ipsum dolor.</h3>
+            <p class="toast__message">Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+
+    <!-- Yêu cầu: chuyển đổi sang BEM, áp dụng scss đã học. -->
+    <!-- 
+        BEM:
+            - block--modifier
+            - block__element--modifier
+    -->
+
+    <!-- News list -->
+    <section class="news-list">
+        <article class="news-item news-item--big"> <!-- Có class big -->
+            <img src="" alt="" class="news-item__thumb">
+            <h3 class="news-item__title">Lorem, ipsum.</h3>
+            <p class="news-item__desc">Lorem ipsum dolor sit amet.</p>
+        </article>
+
+        <article class="news-item">
+            <img src="" alt="" class="news-item__thumb">
+            <h3 class="news-item__title">Lorem, ipsum.</h3>
+            <!-- Có class small -->
+            <p class="news-item__desc news-item__desc--small">Lorem ipsum dolor sit amet.</p>
+        </article>
+    </section>
+</body>
+</html>

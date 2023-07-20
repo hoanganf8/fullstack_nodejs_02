@@ -1,0 +1,20 @@
+.box-1 {
+  width: 100px;
+  height: 100px;
+  background: orange;
+}
+
+.box-2 {
+  width: 150px;
+  height: 150px;
+  background: green;
+  border-radius: 20px 30px 50px 60px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=ex03.css.map */

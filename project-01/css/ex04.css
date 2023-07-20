@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+}
+
+.container {
+  display: flex;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  background: #ccc;
+  padding: 10px;
+}
+.container > * {
+  width: calc(33.3333333333% - 20px);
+  margin-left: 20px;
+}
+.container .item {
+  padding: 10px;
+  background: orange;
+}
+
+.list {
+  display: flex;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-top: 20px;
+  background: #ccc;
+  padding: 10px;
+}
+.list > * {
+  width: calc(25% - 10px);
+  margin-left: 10px;
+}
+.list .list-item {
+  padding: 10px;
+  background: green;
+}
+
+.news-list {
+  display: flex;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-top: 20px;
+  background: #ccc;
+  padding: 10px;
+}
+.news-list > * {
+  width: calc(20% - 20px);
+  margin-left: 20px;
+}
+.news-list > * {
+  padding: 10px;
+  background: violet;
+}
+
+/*# sourceMappingURL=ex04.css.map */

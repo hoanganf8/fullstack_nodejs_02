@@ -1,0 +1,69 @@
+.card {
+  width: 200px;
+  height: 200px;
+  background: #000;
+  color: #000;
+}
+.card-title {
+  font-size: 20px;
+  color: red;
+  background: #000;
+}
+.card-img {
+  color: #000;
+  width: 100%;
+}
+.card-desc {
+  font-size: 16px;
+}
+.card:hover {
+  font-size: #000;
+}
+.card::before {
+  content: "";
+}
+.card:hover::after {
+  color: red;
+}
+.card::after:hover {
+  color: green;
+  font-size: 10px;
+  font-family: system-ui;
+  font-weight: 600;
+}
+
+.card {
+  width: 200px;
+}
+.card__title {
+  font-size: 12px;
+}
+.card__title--big {
+  font-size: 50px;
+}
+
+.news-list {
+  display: flex;
+}
+.news-item {
+  margin: 10px;
+}
+.news-item:hover {
+  background-color: #ccc;
+}
+.news-item__thumb {
+  width: 100%;
+}
+.news-item__title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.news-item__title::before {
+  border-left: 2px solid red;
+}
+.news-item__desc {
+  font-size: 16px;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=styles.css.map */

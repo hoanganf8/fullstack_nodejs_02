@@ -1,0 +1,27 @@
+body {
+  font-family: system-ui;
+}
+
+.btn-warning, .btn-success, .btn-primary {
+  border: none;
+  outline: none;
+  background: #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  color: #fff;
+  background: blue;
+}
+
+.btn-success {
+  color: #fff;
+  background: green;
+}
+
+.btn-warning {
+  background: orange;
+}
+
+/*# sourceMappingURL=ex02.css.map */
