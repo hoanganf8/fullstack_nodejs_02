@@ -1,0 +1,28 @@
+// .box {
+//   padding: 30px 0;
+//   background: gray;
+// }
+
+%section-base {
+  padding: 30px 0;
+  background: gray;
+}
+
+@mixin center($selector) {
+  #{$selector} {
+    margin: 0 auto;
+    width: 1200px;
+  }
+}
+
+.news {
+  box-shadow: 5px 5px 5px #ccc;
+  //   @extend .box;
+  @extend %section-base;
+}
+
+.products {
+  font-style: italic;
+  @extend %section-base;
+  @include center(".container");
+}

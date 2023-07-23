@@ -1,0 +1,61 @@
+/*Comment CSS*/
+//Comment SCSS
+
+$primaryColor: red;
+
+:root {
+  --primary-color: red;
+}
+
+body {
+  font-size: 1.6rem;
+  color: $primaryColor;
+}
+
+$footerCopyright: ".copyright";
+$property: color;
+$size: 10;
+
+.footer {
+  padding: 10px 0;
+  #{$footerCopyright} {
+    text-align: center;
+    #{$property}: grey;
+    // font-size: #{$size}px;
+    // width: $size + 0%;
+    width: #{$size + 0%};
+  }
+}
+
+/*
+Toán tử trong SCSS
+
+1. Toán tử số học: +, -, *, / +, %
+
+2. Toán tử so sánh: >, <, >=, <=, !=, ==
+
+3. Toán tử lý luận: and, or, not
+
+4. Toán tử gán (:)
+
+Nối chuỗi trong SCSS: Dùng dấu +
+*/
+
+$prefix: ".col";
+$breakpoint: "md";
+$number: 5;
+
+//.col-md-1
+$selector: "";
+
+@if $breakpoint != "" and $number > 0 {
+  $selector: $prefix + "-" + $breakpoint + "-" + $number;
+} @else if $number > 0 {
+  $selector: $prefix + "-" + $number;
+} @else {
+  $selector: $prefix;
+}
+
+#{$selector} {
+  width: 50%;
+}

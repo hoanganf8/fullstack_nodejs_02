@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/*Comment CSS*/
+:root {
+  --primary-color: red;
+}
+
+body {
+  font-size: 1.6rem;
+  color: red;
+}
+
+.footer {
+  padding: 10px 0;
+}
+.footer .copyright {
+  text-align: center;
+  color: grey;
+  width: 10%;
+}
+
+/*
+Toán tử trong SCSS
+
+1. Toán tử số học: +, -, *, / +, %
+
+2. Toán tử so sánh: >, <, >=, <=, !=, ==
+
+3. Toán tử lý luận: and, or, not
+
+4. Toán tử gán (:)
+
+Nối chuỗi trong SCSS: Dùng dấu +
+*/
+.col-md-5 {
+  width: 50%;
+}
+
+/*# sourceMappingURL=ex01.css.map */

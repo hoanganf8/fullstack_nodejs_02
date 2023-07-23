@@ -1,0 +1,18 @@
+.products, .news {
+  padding: 30px 0;
+  background: gray;
+}
+
+.news {
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+.products {
+  font-style: italic;
+}
+.products .container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+/*# sourceMappingURL=ex02.css.map */

@@ -1,0 +1,67 @@
+// .col-1 {
+//   width: 10%;
+// }
+
+// .col-2 {
+//   width: 20%;
+// }
+
+// .col-3 {
+//   width: 30%;
+// }
+
+//Vòng lặp for through
+
+// @for $i from 1 through 12 {
+//   $rate: 10%;
+
+//   @if ($i % 2 == 0) {
+//     $rate: 15%;
+//   }
+
+//   .col-#{$i} {
+//     width: $i * $rate;
+//   }
+// }
+
+/*
+Nếu col lẻ => width = $i * 10%
+Nếu col chẵn => width = $i * 15%
+*/
+
+//@each 1 giá trị
+// $sizes: 20, 40, 60, 80;
+
+// @each $size in $sizes {
+//   .col-#{$size} {
+//     width: #{$size * 2%};
+//   }
+// }
+
+//@each nhiều giá trị
+// $sizes: (small, 20, normal), (medium, 40, italic), (large, 60, bold);
+
+// @each $name, $size, $style in $sizes {
+//   .col-#{$name} {
+//     width: #{$size * 2%};
+
+//     @if ($style != bold) {
+//       font-style: $style;
+//     } @else {
+//       font-weight: bold;
+//     }
+//   }
+// }
+
+//@each với giá trị map
+// $sizes: (
+//   small: 20,
+//   medium: 40,
+//   large: 60,
+// );
+
+// @each $name, $size in $sizes {
+//   .col-#{$name} {
+//     width: #{$size * 2%};
+//   }
+// }
