@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: $fontSize;
+  line-height: 1.2;
+  color: $textColor;
+  font-family: $font;
+}
+
+a {
+  text-decoration: none;
+  color: $linkColor;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 20px 0;
+  color: $textColor;
+}
+
+h1 {
+  font-size: 6.8rem;
+}
+
+h2 {
+  font-size: 5.2rem;
+}
+
+h3 {
+  font-size: 3.8rem;
+}
+
+h4 {
+  font-size: 2.8rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 15px;
+}
