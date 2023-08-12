@@ -127,11 +127,21 @@ console.log(users);
 
 //20. find()
 /*
-- Trả về 1 phần của mảng
+- Trả về 1 phần tử của mảng
 - Thỏa mãn điều kiện phần tử đầu tiên return true
+
+//21. findLast()
+- Trả về 1 phần của mảng
+- Thỏa mãn điều kiện phần tử cuối return true
+
+//22. findIndex()
+Tìm vị trí index đầu tiên thỏa mãn điều kiện return true
+
+//23. findLastIndex()
+Tìm vị trí index cuối cùng thỏa mãn điều kiện return true
 */
 
-var result = users.find(function (user) {
+var result = users.findLastIndex(function (user) {
   if (user === "An" || user === "Dũng") {
     return true;
   }
