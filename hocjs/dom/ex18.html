@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <input type="text" class="name" placeholder="Vui lòng nhập..." value="Hoàng An" /> -->
+  <form action="https://api-gateway.fullstack.edu.vn/action_page.php" class="login-form" method="post">
+    <div>
+      <label for="">Email</label>
+      <input type="email" name="email" class="email" placeholder="Email...">
+    </div>
+    <div>
+      <label for="">Password</label>
+      <input type="password" class="password" placeholder="Password..." name="password">
+    </div>
+    <div>
+      <label for="">Tin nhắn</label>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" name="remember" value="1">
+        Remember me
+      </label>
+    </div>
+    <!-- <div>
+      <label for="">Chọn khu vực</label>
+      <select name="area">
+        <option value="">Chọn khu vực</option>
+        <option value="bac">Bắc</option>
+        <option value="trung">Trung</option>
+        <option value="nam">Nam</option>
+      </select>
+    </div> -->
+    <button type="submit">Login</button>
+  </form>
+  <script src="js/ex18.js"></script>
+</body>
+
+</html>
