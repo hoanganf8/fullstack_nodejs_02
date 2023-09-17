@@ -25,7 +25,7 @@
 .progress-bar {
   width: 100%;
   position: relative;
-  height: 20px;
+  height: 10px;
   background: gray;
   margin: 0 20px;
   cursor: pointer;
@@ -48,10 +48,96 @@
   right: 0;
   top: 50%;
   bottom: 0;
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   display: block;
   border-radius: 50%;
   background: blueviolet;
   translate: 50% -50%;
+}
+
+.karaoke {
+  padding: 15px 0;
+}
+
+.karaoke .play {
+  background: blueviolet;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  border: 0;
+}
+
+.karaoke .karaoke-inner {
+  background: blueviolet;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  top: 100%;
+  transition: top 0.4s ease;
+}
+
+.karaoke.show .karaoke-inner {
+  top: 0;
+}
+
+.karaoke .karaoke-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.karaoke .karaoke-heading {
+  font-size: 1.5rem;
+}
+
+.karaoke .karaoke-heading .close {
+  cursor: pointer;
+}
+
+.karaoke .karaoke-content {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.karaoke .karaoke-content p {
+  margin: 10px 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+.karaoke .karaoke-content p span {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  overflow: hidden;
+  color: yellowgreen;
+  text-align: left;
+}
+
+.player-wrap.bottom {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  color: #fff;
+}
+
+.player-wrap.bottom .progress-bar .progress span {
+  background: #fff;
 }
