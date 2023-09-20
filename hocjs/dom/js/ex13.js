@@ -207,7 +207,8 @@ var handleColor = function (currentTime) {
       var sentenceTime = endTime - startTime;
 
       //Tính thời gian của từ với thời gian bắt đầu của câu
-      var time = endTimeResult - startTime;
+      var time = endTimeResult - startTime + 12;
+      // console.log(endTimeResult, endTime);
 
       var rate = (time * 100) / sentenceTime;
 

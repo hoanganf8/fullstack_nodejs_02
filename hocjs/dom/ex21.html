@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      height: 2000px;
+    }
+
+    .header {
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .header nav {
+      height: 20px;
+      background: green;
+      color: #fff;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      padding: 5px 0;
+    }
+
+    .header nav.fixed {
+      position: fixed;
+      inset: 0 0 auto 0;
+    }
+
+    section {
+      min-height: 100vh;
+    }
+
+    .header nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>HEADER</h1>
+    <nav>
+      <a href="#hero">Về F8</a>
+      <a href="#register">Đăng ký khóa học</a>
+    </nav>
+  </header>
+  <main>
+    <section id="hero">
+      <h2>
+        F8 - Fullstack
+      </h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis atque nisi deserunt, omnis pariatur voluptas repellendus placeat ipsum cumque cum vel quos at, alias, esse obcaecati. Ullam, dolore? Et, quaerat?
+      </p>
+    </section>
+    <section id="register">
+      <h2>Đăng ký khóa học</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus quia adipisci voluptatum, aspernatur, ullam quos maxime tempora expedita rerum eligendi dignissimos laudantium corporis aut doloremque repellendus omnis ipsa, distinctio nam!
+      </p>
+    </section>
+  </main>
+  <script src="js/ex21.js"></script>
+</body>
+
+</html>

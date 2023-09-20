@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 2000px;
+      /* width: 2000px; */
+    }
+
+    .top {
+      background: red;
+      color: #fff;
+      border: 0;
+      position: fixed;
+      right: 5px;
+      bottom: 5px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .top.show {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Event Scroll</h1>
+  <button class="top">
+    Top
+  </button>
+  <script src="js/ex20.js"></script>
+</body>
+
+</html>
