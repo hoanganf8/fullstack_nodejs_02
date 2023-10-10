@@ -1,4 +1,17 @@
 import { client } from "./client.js";
+import { config } from "./config.js";
+const { PAGE_LIMIT } = config;
+
+const renderPaginate = (totalPages) => {
+  const paginateNav = document.querySelector(".paginate-nav");
+  paginateNav.innerHTML = `<ul class="pagination">
+  <li class="page-item"><a class="page-link" href="#">Trước</a></li>
+  <li class="page-item"><a class="page-link active" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+</ul>`;
+};
 
 const render = (posts) => {
   const stripHtmlTag = (html) => html.replace(/<[^>]*>?/gm, "");
@@ -25,14 +38,25 @@ const render = (posts) => {
 const getPosts = async (query = {}) => {
   //Chuyển object query => query string
   const queryString = new URLSearchParams(query).toString();
-  const { data: posts } = await client.get(`/posts?${queryString}`);
+  const { data: posts, response } = await client.get(`/posts?${queryString}`);
+
+  //Tính tổng số trang = Tổng số bài viết / Số bài viết ở 1 trang (limit)
+  const totalPosts = response.headers.get("x-total-count");
+
+  const totalPages = Math.ceil(totalPosts / PAGE_LIMIT);
+
   render(posts);
+  renderPaginate(totalPages);
 };
 
-getPosts({
+const query = {
   _sort: "id",
   _order: "desc",
-});
+  _limit: PAGE_LIMIT,
+  _page: 1,
+};
+
+getPosts(query);
 
 const searchForm = document.querySelector(".search");
 searchForm.addEventListener("submit", (e) => {
@@ -40,9 +64,16 @@ searchForm.addEventListener("submit", (e) => {
   const keywordEl = e.target.querySelector(".keyword");
   const keyword = keywordEl.value;
 
-  getPosts({
-    q: keyword,
-  });
+  query.q = keyword;
+
+  getPosts(query);
 
   keywordEl.value = "";
+});
+
+const sortByEl = document.querySelector(".sort-by");
+sortByEl.addEventListener("change", (e) => {
+  const order = e.target.value;
+  query._order = order;
+  getPosts(query);
 });
