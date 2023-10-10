@@ -3,14 +3,34 @@ import { config } from "./config.js";
 const { PAGE_LIMIT } = config;
 
 const renderPaginate = (totalPages) => {
+  const { _page } = query;
   const paginateNav = document.querySelector(".paginate-nav");
+  const range = [...Array(totalPages).keys()];
+
   paginateNav.innerHTML = `<ul class="pagination">
   <li class="page-item"><a class="page-link" href="#">Trước</a></li>
-  <li class="page-item"><a class="page-link active" href="#">1</a></li>
-  <li class="page-item"><a class="page-link" href="#">2</a></li>
-  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  ${range
+    .map(
+      (index) =>
+        `<li class="page-item ${
+          _page === index + 1 ? "active" : ""
+        }"><a class="page-link page-number" href="#">${index + 1}</a></li>`,
+    )
+    .join("")}
   <li class="page-item"><a class="page-link" href="#">Sau</a></li>
 </ul>`;
+
+  paginateNav.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains("page-number")) {
+      goPage(e.target.innerText);
+    }
+  });
+};
+
+const goPage = (page) => {
+  query._page = +page;
+  getPosts(query);
 };
 
 const render = (posts) => {
