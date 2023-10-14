@@ -3,13 +3,26 @@ import { config } from "./config.js";
 const { SERVER_API } = config;
 
 export const client = {
-  send: async (url, method = "GET", body = null) => {
-    url = SERVER_API + url;
+  serverApi: SERVER_API,
+  token: null,
+  setUrl: function (url) {
+    this.serverApi = url;
+  },
+  setToken: function (token) {
+    this.token = token;
+  },
+  send: async function (url, method = "GET", body = null) {
+    // url = SERVER_API + url;
+    url = `${this.serverApi}${url}`;
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    if (this.token) {
+      headers["Authorization"] = `Bearer ${this.token}`;
+    }
     const options = {
       method,
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers,
     };
 
     if (body) {
