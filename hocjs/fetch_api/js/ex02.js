@@ -6,7 +6,6 @@ const renderPaginate = (totalPages) => {
   const { _page } = query;
   const paginateNav = document.querySelector(".paginate-nav");
   const range = [...Array(totalPages).keys()];
-
   paginateNav.innerHTML = `<ul class="pagination">
   <li class="page-item"><a class="page-link" href="#">Trước</a></li>
   ${range
@@ -19,7 +18,6 @@ const renderPaginate = (totalPages) => {
     .join("")}
   <li class="page-item"><a class="page-link" href="#">Sau</a></li>
 </ul>`;
-
   paginateNav.addEventListener("click", (e) => {
     e.preventDefault();
     if (e.target.classList.contains("page-number")) {
