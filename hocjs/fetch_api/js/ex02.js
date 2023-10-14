@@ -1,13 +1,17 @@
 import { client } from "./client.js";
 import { config } from "./config.js";
 const { PAGE_LIMIT } = config;
-
+const paginateNav = document.querySelector(".paginate-nav");
 const renderPaginate = (totalPages) => {
   const { _page } = query;
-  const paginateNav = document.querySelector(".paginate-nav");
+
   const range = [...Array(totalPages).keys()];
   paginateNav.innerHTML = `<ul class="pagination">
-  <li class="page-item"><a class="page-link" href="#">Trước</a></li>
+  ${
+    _page > 1
+      ? `<li class="page-item"><a class="page-link page-prev" href="#">Trước</a></li>`
+      : ""
+  }
   ${range
     .map(
       (index) =>
@@ -16,14 +20,12 @@ const renderPaginate = (totalPages) => {
         }"><a class="page-link page-number" href="#">${index + 1}</a></li>`,
     )
     .join("")}
-  <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+  ${
+    _page < totalPages
+      ? `<li class="page-item"><a class="page-link page-next" href="#">Sau</a></li>`
+      : ""
+  }
 </ul>`;
-  paginateNav.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (e.target.classList.contains("page-number")) {
-      goPage(e.target.innerText);
-    }
-  });
 };
 
 const goPage = (page) => {
@@ -94,4 +96,19 @@ sortByEl.addEventListener("change", (e) => {
   const order = e.target.value;
   query._order = order;
   getPosts(query);
+});
+
+paginateNav.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("page-number")) {
+    goPage(e.target.innerText);
+  }
+
+  if (e.target.classList.contains("page-next")) {
+    goPage(query._page + 1);
+  }
+
+  if (e.target.classList.contains("page-prev")) {
+    goPage(query._page - 1);
+  }
 });
