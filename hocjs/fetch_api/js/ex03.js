@@ -49,6 +49,32 @@ const getProfile = async () => {
   }
 };
 
+const eventLogin = () => {
+  const loginForm = document.querySelector(".login");
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const emailEl = e.target.querySelector(".email");
+      const passwordEl = e.target.querySelector(".password");
+
+      const email = emailEl.value;
+      const password = passwordEl.value;
+
+      handleLogin({ email, password });
+    });
+  }
+};
+
+const eventLogout = () => {
+  const logout = document.querySelector(".profile .logout");
+  if (logout) {
+    logout.addEventListener("click", (e) => {
+      e.preventDefault();
+      handleLogout();
+    });
+  }
+};
+
 const render = () => {
   if (isLogin()) {
     root.innerHTML = `<div class="container py-3">
@@ -83,6 +109,9 @@ const render = () => {
     </div>
     </div>`;
   }
+
+  eventLogin();
+  eventLogout();
 };
 
 render();
@@ -124,25 +153,3 @@ const handleLogin = async (data) => {
   }
   loading("remove");
 };
-
-const loginForm = document.querySelector(".login");
-if (loginForm) {
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const emailEl = e.target.querySelector(".email");
-    const passwordEl = e.target.querySelector(".password");
-
-    const email = emailEl.value;
-    const password = passwordEl.value;
-
-    handleLogin({ email, password });
-  });
-}
-
-const logout = document.querySelector(".profile .logout");
-if (logout) {
-  logout.addEventListener("click", (e) => {
-    e.preventDefault();
-    handleLogout();
-  });
-}
