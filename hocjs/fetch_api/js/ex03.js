@@ -9,6 +9,8 @@ Authorization
 */
 
 import { client } from "./client.js";
+import { requestRefresh } from "./token.js";
+
 client.setUrl("https://api.escuelajs.co/api/v1");
 
 const root = document.querySelector("#root");
@@ -30,7 +32,8 @@ const handleLogout = () => {
 const getProfile = async () => {
   const tokens = localStorage.getItem("login_token");
   if (tokens) {
-    const { access_token: accessToken } = JSON.parse(tokens);
+    const { access_token: accessToken, refresh_token: refreshToken } =
+      JSON.parse(tokens);
     if (!accessToken) {
       //Xử lý logout
       handleLogout();
@@ -39,8 +42,17 @@ const getProfile = async () => {
       client.setToken(accessToken);
       const { response, data } = await client.get("/auth/profile");
       if (!response.ok) {
-        //Xử lý logout -> 401
-        handleLogout();
+        const { data: newToken } = await requestRefresh(refreshToken);
+        //Gửi yêu cầu cấp lại accessToken mới
+
+        //Lấy được token mới -> Trả về cả refresh và access mới
+        if (newToken) {
+          localStorage.setItem("login_token", JSON.stringify(newToken));
+          getProfile(); //Gọi lại profile
+        } else {
+          //Xử lý logout -> 401
+          handleLogout();
+        }
       } else {
         const profileName = document.querySelector(".profile .name");
         profileName.innerText = data.name;
@@ -153,3 +165,71 @@ const handleLogin = async (data) => {
   }
   loading("remove");
 };
+
+//Xử lý lấy lại accessToken khi hết hạn (expired) -> Gửi lên 1 refreshToken -> trả về access mới
+
+// let token = "Token";
+// let isExpired = false; //Có 1 request check expire
+// let refreshPromise = null;
+// const requestRefresh = () => {
+//   //Trả về accessToken mới
+//   if (!refreshPromise) {
+//     refreshPromise = new Promise((resolve) => {
+//       setTimeout(() => {
+//         console.log("Request Refresh Token: " + Math.random());
+//         resolve(`New Token`);
+//       }, 3000);
+//     });
+//   }
+
+//   return refreshPromise;
+// };
+
+// const requestApi = async (url) => {
+//   if (url === "/pro") {
+//     isExpired = true;
+//   }
+
+//   if (isExpired) {
+//     token = await requestRefresh();
+//   }
+
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(`Call API: ${url} với ${token}`);
+//     }, 1000);
+//   });
+// };
+
+// (async () => {
+//   const slider = await requestApi("/slider");
+//   console.log(slider);
+// })();
+
+// (async () => {
+//   const pro = await requestApi("/pro");
+//   console.log(pro);
+// })();
+
+// (async () => {
+//   const free = await requestApi("/free");
+//   console.log(free);
+// })();
+
+/*
+request1 -> Chưa hết hạn -> Trả về data
+request2 -> hết hạn -> Cấp lại access mới
+request3 -> hết hạn -> Cấp lại access mới
+
+Cần xử lý:
+request1 -> request 2 -> cấp lại access mới -> request 3 đợi khi nào có access mới
+
+Xử lý khi Logout: -> Call API Logout -> Đưa token vào Blacklist (Nằm trên Server) và xóa refresh khỏi server
+
+Refresh Token và accessToken lưu như thế nào?
+
+- Refresh Token -> Lưu Server và Client
+- Access Token -> Lưu ở Client
++ Cookie -> Dễ bị tấn công CSRF
++ localStorage, sessionStorage -> Dễ bị tấn công XSS
+*/
