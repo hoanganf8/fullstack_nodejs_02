@@ -45,3 +45,17 @@ const expires = new Date("2023-10-18 09:33:00").toUTCString();
 
 //Xóa cookie
 // document.cookie = `username=;expires=${new Date().toUTCString()};path=/`;
+
+/*
+1. sessionStorage, localStorage
+- Dung lượng lưu trữ lớn: 4-5MB
+- Không share được giữa các subdomain
+- Có thể dùng JS để thao tác
+=> Dễ bị tấn công qua XSS
+
+2. cookie
+- Bảo mật hơn -> HttpOnly
+- Dung lượng lưu trữ thấp
+- Share giữa các subdomain
+- Phân biệt theo path
+*/

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .countdown {
+      background: red;
+      color: #fff;
+      padding: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .countdown span+span::before {
+      content: ':';
+      padding-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <span>00</span>
+    <span>00</span>
+    <span>00</span>
+    <span>00</span>
+  </div>
+  <script src="js/ex02.js"></script>
+</body>
+
+</html>
