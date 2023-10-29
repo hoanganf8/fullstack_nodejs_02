@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;;ACCE","sources":["src/assets/style.css","src/assets/style.scss"],"sourcesContent":["h1 {\r\n  color: green;\r\n  font-style: italic;\r\n}\r\n",".content {\r\n  h2 {\r\n    color: blue;\r\n    font-weight: bold;\r\n  }\r\n}\r\n"],"names":[],"version":3,"file":"index.a5210753.css.map","sourceRoot":"/__parcel_source_root/"}

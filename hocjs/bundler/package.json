@@ -2,15 +2,27 @@
   "name": "bundler",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ./index.html --port=8080 --host=127.0.0.1 --open"
+    "start": "rm -rf ./.parcel-cache && npx parcel ./index.html --port=8080 --host=127.0.0.1 --open",
+    "build": "rm -rf ./build && npx parcel build ./index.html --dist-dir=./build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.10.0"
+    "@parcel/transformer-sass": "^2.10.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.10.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4"
   }
 }
