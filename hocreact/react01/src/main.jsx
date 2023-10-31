@@ -1,4 +1,4 @@
-import { App } from "./App";
+import App from "./App";
 import ReactDOM from "react-dom/client";
 import React from "react";
 const rootEl = document.querySelector("#root");
