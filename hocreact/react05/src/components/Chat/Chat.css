@@ -1,0 +1,16 @@
+.chat-box {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.chat-box .chat-message {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.chat-box .chat-message .message-item {
+  background: gainsboro;
+  border-radius: 10px;
+  padding: 5px;
+}
