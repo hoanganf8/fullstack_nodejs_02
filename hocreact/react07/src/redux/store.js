@@ -1,5 +1,10 @@
-import { combineReducers, legacy_createStore as createStore } from "redux";
+import {
+  combineReducers,
+  legacy_createStore as createStore,
+  applyMiddleware,
+} from "redux";
 import { composeWithDevTools } from "@redux-devtools/extension";
+import thunk from "redux-thunk";
 import { counterReducer } from "./reducers/counterReducer";
 import { todoReducer } from "./reducers/todoReducer";
 
@@ -8,7 +13,10 @@ const rootReducer = combineReducers({
   todo: todoReducer,
 });
 
-export const store = createStore(rootReducer, composeWithDevTools());
+export const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk)),
+);
 
 //Kỹ thuật tách Reducer
 //rootReducer
