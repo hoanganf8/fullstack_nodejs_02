@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Trang quản trị",
+};
 const AdminLayout = ({ children }) => {
   return (
     <>
