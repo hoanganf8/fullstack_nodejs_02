@@ -76,5 +76,35 @@
       "name": "gdf",
       "id": 19
     }
+  ],
+  "posts": [
+    {
+      "title": "Bùi Quang Trưởng",
+      "id": 1
+    },
+    {
+      "title": "Kiều Duy Tùng",
+      "id": 2
+    },
+    {
+      "title": "Lưu Anh Quân",
+      "id": 3
+    },
+    {
+      "title": "Tạ Hoàng An",
+      "id": 4
+    },
+    {
+      "title": "ABC",
+      "id": 5
+    },
+    {
+      "title": "Nguyễn Dương",
+      "id": 6
+    },
+    {
+      "title": "ABC",
+      "id": 7
+    }
   ]
 }
