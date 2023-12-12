@@ -1,8 +1,14 @@
 <h1>Học NodeJS không khó</h1>
 <h2><%= title %></h2>
+<h2><%- title %></h2>
 <p>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nemo
   repellendus, fuga modi assumenda nisi mollitia, sunt libero aliquid ab
   exercitationem recusandae non doloribus quidem! Quisquam numquam cupiditate
   quos et.
 </p>
+<%- include('./banner') %>
+<hr />
+<% users.forEach(user => { %>
+<h3><%= user %></h3>
+<% }) %>
