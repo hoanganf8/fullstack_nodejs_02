@@ -1,9 +1,16 @@
 import express from "express";
 import routerIndex from "./routes/index.js";
 import routerUsers from "./routes/users.js";
+import routerAuth from "./routes/auth.js";
+import authMiddleware from "./middlewares/auth.middleware.js";
 const app = express();
 
+app.set("view engine", "ejs");
+app.set("views", "./views");
+
 //Routing
+app.use(routerAuth);
+// app.use(authMiddleware);
 app.use(routerIndex);
 app.use("/users", routerUsers);
 

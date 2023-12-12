@@ -1,6 +1,13 @@
 const homeController = {
   index: (req, res) => {
-    res.send(`<h1>Học Express không khó</h1>`);
+    //Lấy thông tin của Request
+    //Validate
+    //Làm việc với Model (Database)
+    //Xử lý logic nghiệp vụ
+    //Response: json, view (html), redirect, cookie, header,...
+    // res.send(`<h1>Học Express không khó</h1>`);
+    const title = "Học ExpressJS không khó";
+    res.render("home/index", { title });
   },
 };
 export default homeController;
