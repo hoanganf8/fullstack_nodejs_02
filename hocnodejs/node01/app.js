@@ -1,11 +1,23 @@
 import express from "express";
 import expressEjsLayouts from "express-ejs-layouts";
+import session from "express-session";
+import flash from "connect-flash";
 import bodyParser from "body-parser";
 import routerIndex from "./routes/index.js";
 import routerUsers from "./routes/users.js";
 import routerAuth from "./routes/auth.js";
 import authMiddleware from "./middlewares/auth.middleware.js";
 const app = express();
+
+app.use(
+  session({
+    name: "f8_session_id",
+    secret: "f8",
+    resave: false,
+    saveUninitialized: true,
+  }),
+);
+app.use(flash());
 
 //Static file
 app.use(express.static("public"));
