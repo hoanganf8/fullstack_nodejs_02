@@ -1,0 +1,44 @@
+<h1>Danh sách khóa học</h1>
+<form action="" class="mb-3">
+  <div class="row">
+    <div class="col-9">
+      <input
+        type="search"
+        class="form-control"
+        name="keyword"
+        placeholder="Từ khóa tìm kiếm..."
+      />
+    </div>
+    <div class="col-3 d-grid">
+      <button class="btn btn-success">Tìm kiếm</button>
+    </div>
+  </div>
+</form>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th width="5%">STT</th>
+      <th>Tên</th>
+      <th>Giá</th>
+      <th>Thời gian</th>
+      <th width="5%">Sửa</th>
+      <th width="5%">Xóa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% courses.forEach((course, index) => { %>
+    <tr>
+      <td><%= index+1 %></td>
+      <td><%= course.name %></td>
+      <td><%= course.price %></td>
+      <td><%= moment(course.created_at).format('DD/MM/YYYY HH:mm:ss') %></td>
+      <td>
+        <a href="#" class="btn btn-warning">Sửa</a>
+      </td>
+      <td>
+        <a href="#" class="btn btn-danger">Xóa</a>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
