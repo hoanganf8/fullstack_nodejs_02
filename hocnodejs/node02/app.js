@@ -5,12 +5,24 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const expressLayouts = require("express-ejs-layouts");
+const session = require("express-session");
+const flash = require("connect-flash");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
-var app = express();
+const validateMiddleware = require("./middlewares/validate.middleware");
 
+var app = express();
+app.use(
+  session({
+    secret: "f8",
+    resave: false,
+    saveUninitialized: true,
+  }),
+);
+app.use(flash());
+app.use(validateMiddleware);
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");

@@ -1,7 +1,17 @@
 <h1>Danh sách khóa học</h1>
+<div class="mb-3">
+  <a href="/add" class="btn btn-success">Thêm mới</a>
+</div>
 <form action="" class="mb-3">
   <div class="row">
-    <div class="col-9">
+    <div class="col-3">
+      <select class="form-select" name="status">
+        <option value="all">Tất cả</option>
+        <option value="active">Kích hoạt</option>
+        <option value="inactive">Chưa kích hoạt</option>
+      </select>
+    </div>
+    <div class="col-7">
       <input
         type="search"
         class="form-control"
@@ -9,17 +19,21 @@
         placeholder="Từ khóa tìm kiếm..."
       />
     </div>
-    <div class="col-3 d-grid">
+    <div class="col-2 d-grid">
       <button class="btn btn-success">Tìm kiếm</button>
     </div>
   </div>
 </form>
+<%- msg.length ? `
+<div class="alert alert-success mt-2">${msg}</div>
+` :'' %>
 <table class="table table-bordered">
   <thead>
     <tr>
       <th width="5%">STT</th>
       <th>Tên</th>
       <th>Giá</th>
+      <th>Trạng thái</th>
       <th>Thời gian</th>
       <th width="5%">Sửa</th>
       <th width="5%">Xóa</th>
@@ -30,7 +44,8 @@
     <tr>
       <td><%= index+1 %></td>
       <td><%= course.name %></td>
-      <td><%= course.price %></td>
+      <td><%= course.status ? 'Kích hoạt': 'Chưa kích hoạt' %></td>
+      <td><%= course.price.toLocaleString() %></td>
       <td><%= moment(course.created_at).format('DD/MM/YYYY HH:mm:ss') %></td>
       <td>
         <a href="#" class="btn btn-warning">Sửa</a>
