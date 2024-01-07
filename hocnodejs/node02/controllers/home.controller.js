@@ -49,4 +49,62 @@ module.exports = {
     }
     return res.redirect("/add");
   },
+  edit: async (req, res, next) => {
+    const { id } = req.params;
+    req.session.currentId = id;
+    //Truy vấn thông tin khóa học khớp với id
+    let course;
+    try {
+      course = await courseModel.find(id);
+      if (!course.length) {
+        throw new Error("Khóa học không tồn tại");
+      }
+    } catch (e) {
+      return next(e);
+    }
+
+    course[0].status = course[0].status ? "active" : "inactive"; //Trả về giao diện để tự động selected
+
+    req.old = course[0];
+    const msg = req.flash("msg");
+    res.render("home/edit", { req, msg });
+  },
+  handleEdit: async (req, res, next) => {
+    const { id } = req.params;
+    if (+req.session.currentId !== +id) {
+      next(new Error("Come back"));
+    }
+    const body = await req.validate(req.body, {
+      name: string()
+        .required("Tên khóa học bắt buộc phải nhập")
+        .test("check-unique", "Tên khóa học đã tồn tại", async (value) => {
+          return await courseModel.courseUnique(value, id);
+        }),
+      price: string()
+        .required("Giá khóa học bắt buộc phải nhập")
+        .test("check-number", "Giá khóa học phải là số", (value) => {
+          value = +value;
+          if (!isNaN(value)) {
+            return true;
+          }
+          return false;
+        }),
+    });
+    if (body) {
+      await courseModel.update(body, id);
+      req.flash("msg", "Cập nhật khóa học thành công");
+    }
+
+    return res.redirect("/edit/" + id);
+  },
+  delete: async (req, res, next) => {
+    const { id } = req.params;
+    try {
+      await courseModel.delete(id);
+      req.flash("msg", "Xóa thành công");
+      return res.redirect("/");
+    } catch (e) {
+      return next(e);
+    }
+  },
 };

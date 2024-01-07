@@ -48,10 +48,16 @@
       <td><%= course.price.toLocaleString() %></td>
       <td><%= moment(course.created_at).format('DD/MM/YYYY HH:mm:ss') %></td>
       <td>
-        <a href="#" class="btn btn-warning">Sửa</a>
+        <a href="/edit/<%= course.id %>" class="btn btn-warning">Sửa</a>
       </td>
       <td>
-        <a href="#" class="btn btn-danger">Xóa</a>
+        <form
+          action="/delete/<%= course.id %>"
+          method="post"
+          onsubmit="return confirm('Bạn có chắc chắn?')"
+        >
+          <button class="btn btn-danger">Xóa</button>
+        </form>
       </td>
     </tr>
     <% }) %>

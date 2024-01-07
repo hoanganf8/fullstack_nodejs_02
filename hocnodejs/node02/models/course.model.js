@@ -19,21 +19,31 @@ module.exports = {
 
     return sql`SELECT * FROM courses ${filter} ORDER BY id DESC`;
   },
-  courseUnique: async (name) => {
-    const result = await sql`SELECT id FROM courses WHERE name=${name.trim()}`;
+  courseUnique: async (name, id = 0) => {
+    const ignore = id > 0 ? sql`AND id!=${id}` : sql``;
+    const result =
+      await sql`SELECT id FROM courses WHERE name=${name.trim()} ${ignore}`;
     if (result.length) {
       return false;
     }
     return true;
   },
-  get: (id) => {},
   create: (name, price, status) => {
     return sql`INSERT INTO courses(name, price, status) VALUES(${name}, ${price}, ${
       status === "active" ? true : false
     })`;
   },
-  update: (data, id) => {},
-  destroy: (id) => {},
+  find: (id) => {
+    return sql`SELECT * FROM courses WHERE id = ${id}`;
+  },
+  update: ({ name, price, status }, id) => {
+    return sql`UPDATE courses SET name=${name}, price=${price}, status=${
+      status === "active"
+    }, updated_at=NOW() WHERE id = ${id}`;
+  },
+  delete: (id) => {
+    return sql`DELETE FROM courses WHERE id = ${id}`;
+  },
 };
 
 /*
