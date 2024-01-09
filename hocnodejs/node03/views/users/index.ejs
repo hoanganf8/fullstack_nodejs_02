@@ -1,4 +1,5 @@
 <h1>Danh sách người dùng</h1>
+<a href="/users/add" class="btn btn-primary mb-3">Thêm mới</a>
 <form action="" class="mb-3">
   <div class="row">
     <div class="col-3">
@@ -41,8 +42,18 @@
       <td><%= user.email %></td>
       <td><%= user.status ? 'Kích hoạt': 'Chưa kích hoạt' %></td>
       <td><%= moment(user.created_at).format('DD/MM/YYYY HH:mm:ss') %></td>
-      <td><a href="#" class="btn btn-warning">Sửa</a></td>
-      <td><a href="#" class="btn btn-danger">Xóa</a></td>
+      <td>
+        <a href="/users/edit/<%= user.id %>" class="btn btn-warning">Sửa</a>
+      </td>
+      <td>
+        <form
+          action="/users/delete/<%= user.id %>"
+          method="post"
+          onsubmit="return confirm('Bạn có chắc chắn?')"
+        >
+          <button class="btn btn-danger">Xóa</button>
+        </form>
+      </td>
     </tr>
     <% }) %>
   </tbody>
