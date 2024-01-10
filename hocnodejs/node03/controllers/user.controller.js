@@ -26,14 +26,32 @@ module.exports = {
         },
       ];
     }
-    const users = await User.findAll({
+    let { page = 1 } = req.query;
+    if (!+page) {
+      page = 1;
+    }
+    const limit = 3;
+    const offset = (page - 1) * limit;
+    const { rows: users, count } = await User.findAndCountAll({
       order: [
         ["id", "DESC"],
         ["created_at", "ASC"],
       ],
       where: filters,
+      limit,
+      offset,
     });
-    res.render("users/index", { users, moment });
+    const totalPage = Math.ceil(count / limit);
+
+    /*
+    - Lấy được page hiện tại: req.query
+    - Xác định limit: config
+    - Tính offset: (page - 1) * limit
+    - Tính tổng số bản ghi
+    - Tính tổng số trang: Tổng số bản ghi / limit --> Làm tròn lên
+    - Hiển thị số trang: Sử dụng paginate của bootstrap
+    */
+    res.render("users/index", { users, moment, page, totalPage });
   },
   add: (req, res) => {
     res.render("users/add");
@@ -72,6 +90,7 @@ module.exports = {
     const { id } = req.params;
     const status = await User.destroy({
       where: { id },
+      force: true,
     });
     return res.redirect(`/users`);
   },

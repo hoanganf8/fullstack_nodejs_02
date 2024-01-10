@@ -58,3 +58,18 @@
     <% }) %>
   </tbody>
 </table>
+<ul class="pagination">
+  <% if (page > 1) { %>
+  <li class="page-item">
+    <a class="page-link" href="?page=<%= +page-1 %>">Trước</a>
+  </li>
+  <% } %> <% for( let index = 1; index <= totalPage; index++ ) { %>
+  <li class="page-item <%= +index === +page ? 'active': '' %>">
+    <a class="page-link" href="?page=<%= index %>"><%= index %></a>
+  </li>
+  <% } %> <% if (page < totalPage) { %>
+  <li class="page-item">
+    <a class="page-link" href="?page=<%= +page+1 %>">Sau</a>
+  </li>
+  <% } %>
+</ul>

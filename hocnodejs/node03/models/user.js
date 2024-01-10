@@ -29,6 +29,8 @@ module.exports = (sequelize, DataTypes) => {
       tableName: "users", //Tên bảng trong Database
       createdAt: "created_at",
       updatedAt: "updated_at",
+      deletedAt: "deleted_at",
+      paranoid: true,
       // timestamps: false
     },
   );
