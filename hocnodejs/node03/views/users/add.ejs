@@ -27,6 +27,15 @@
       <option value="1">Kích hoạt</option>
     </select>
   </div>
+  <div class="mb-3">
+    <label for="">Khóa học</label>
+    <% courses.forEach(course => { %>
+    <label class="d-block">
+      <input type="checkbox" name="courses" value="<%= course.id %>" /> <%=
+      course.name %>
+    </label>
+    <% }) %>
+  </div>
   <button class="btn btn-primary">Lưu</button>
   <a href="/users" class="btn btn-danger">Hủy</a>
 </form>

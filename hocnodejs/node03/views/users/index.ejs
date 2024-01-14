@@ -28,6 +28,7 @@
       <th width="5%">STT</th>
       <th>Tên</th>
       <th>Email</th>
+      <th>Điện thoại</th>
       <th>Trạng thái</th>
       <th>Thời gian</th>
       <th width="5%">Sửa</th>
@@ -40,6 +41,7 @@
       <td><%= index+1 %></td>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
+      <td><%= user.phone?.phone %></td>
       <td><%= user.status ? 'Kích hoạt': 'Chưa kích hoạt' %></td>
       <td><%= moment(user.created_at).format('DD/MM/YYYY HH:mm:ss') %></td>
       <td>

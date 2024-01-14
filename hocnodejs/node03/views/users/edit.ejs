@@ -29,6 +29,27 @@
       <option value="1" <%= user.status ? 'selected': '' %>>Kích hoạt</option>
     </select>
   </div>
+  <div class="mb-3">
+    <label for="">Khóa học</label>
+    <% courses.forEach(course => {
+      //console.log(course);
+      const isChecked = user.courses.find(item => item.id === course.id);
+      %>
+       <label class="d-block">
+        <input type="checkbox" name="courses" value="<%= course.id %>" <%= isChecked ? 'checked': '' %>> <%= course.name %>
+      </label>
+    <% }) %>
+  
+  </div>
+  <% if (user?.posts?.length) { %>
+   <div class="mb-3">
+    <h3>Danh sách bài viết</h3>
+    <% user?.posts?.forEach(post => { %>
+      <p><%= post.title %></p>
+    <% }) %>
+  </div>
+  <% } %>
+  
   <button class="btn btn-primary">Lưu</button>
   <a href="/users" class="btn btn-danger">Hủy</a>
 </form>
