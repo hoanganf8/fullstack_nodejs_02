@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Course.belongsToMany(models.User, {
-        foreignKey: "course_id",
-        through: "users_courses",
-        as: "users",
-      });
+      // Course.belongsToMany(models.User, {
+      //   foreignKey: "course_id",
+      //   through: "users_courses",
+      //   as: "users",
+      // });
     }
   }
   Course.init(

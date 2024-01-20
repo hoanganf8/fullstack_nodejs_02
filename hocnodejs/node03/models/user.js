@@ -9,21 +9,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasOne(models.Phone, {
-        foreignKey: "user_id",
-        as: "phone",
-      });
-
-      User.hasMany(models.Post, {
-        foreignKey: "user_id",
-        as: "posts",
-      });
-
-      User.belongsToMany(models.Course, {
-        foreignKey: "user_id",
-        through: "users_courses",
-        as: "courses",
-      });
+      // User.hasOne(models.Phone, {
+      //   foreignKey: "user_id",
+      //   as: "phone",
+      // });
+      // User.hasMany(models.Post, {
+      //   foreignKey: "user_id",
+      //   as: "posts",
+      // });
+      // User.belongsToMany(models.Course, {
+      //   foreignKey: "user_id",
+      //   through: "users_courses",
+      //   as: "courses",
+      // });
     }
   }
   User.init(
@@ -33,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      name: DataTypes.STRING(30),
+      fullname: DataTypes.STRING(30),
       email: DataTypes.STRING(100),
       password: DataTypes.STRING(100),
       status: DataTypes.BOOLEAN,
@@ -44,8 +42,8 @@ module.exports = (sequelize, DataTypes) => {
       tableName: "users", //Tên bảng trong Database
       createdAt: "created_at",
       updatedAt: "updated_at",
-      deletedAt: "deleted_at",
-      paranoid: true,
+      //: "deleted_at",
+      //paranoid: true,
       // timestamps: false
     },
   );

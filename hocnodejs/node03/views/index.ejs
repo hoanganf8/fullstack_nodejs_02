@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<h1>Chào mừng bạn đã quay trở lại với F8</h1>
+<ul class="d-flex gap-2 list-unstyled">
+  <li>Chào bạn: <%= req.user.fullname %></li>
+  <li><a href="/auth/logout">Đăng xuất</a></li>
+</ul>

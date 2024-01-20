@@ -4,7 +4,7 @@ const sendMail = require("../utils/mail");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", { req });
 });
 
 router.get("/send-mail", async (req, res) => {
