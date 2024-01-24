@@ -1,4 +1,4 @@
-const { User } = require("../models/index");
+const { User, Provider } = require("../models/index");
 const bcrypt = require("bcrypt");
 const LocalStrategy = require("passport-local").Strategy;
 module.exports = new LocalStrategy(
@@ -7,8 +7,16 @@ module.exports = new LocalStrategy(
     passwordField: "password",
   },
   async (email, password, done) => {
+    const provider = await Provider.findOne({
+      where: { name: "email" },
+    });
+    if (!provider) {
+      return done(null, false, {
+        message: "Provider không tồn tại",
+      });
+    }
     const user = await User.findOne({
-      where: { email },
+      where: { email, provider_id: provider.id },
     });
     if (!user) {
       return done(null, false, {

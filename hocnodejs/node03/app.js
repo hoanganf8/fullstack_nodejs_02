@@ -14,6 +14,7 @@ var usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const { User } = require("./models/index");
 const passportLocal = require("./passports/passport.local");
+const passportGoogle = require("./passports/passport.google");
 const authMiddleware = require("./middlewares/auth.middleware");
 const guestMiddleware = require("./middlewares/guest.middleware");
 
@@ -30,6 +31,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use("local", passportLocal);
+passport.use("google", passportGoogle);
 
 passport.serializeUser(function (user, done) {
   done(null, user.id);

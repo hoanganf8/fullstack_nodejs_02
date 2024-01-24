@@ -16,6 +16,18 @@ router.post(
   //   res.json({ user });
   // },
 );
+router.get("/google/redirect", passport.authenticate("google"));
+router.get(
+  "/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/auth/login",
+    failureFlash: true,
+    successRedirect: "/",
+  }),
+  // (req, res) => {
+  //   res.send("ok");
+  // },
+);
 router.get("/logout", (req, res) => {
   req.logout((err) => {});
   return res.redirect("/auth/login");
