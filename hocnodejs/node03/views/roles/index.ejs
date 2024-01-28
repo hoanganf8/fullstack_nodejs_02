@@ -1,0 +1,41 @@
+<h1>Quản lý vai trò</h1>
+<% if (req.can('roles.create')) { %>
+<a href="/roles/add" class="btn btn-primary mb-2">Thêm mới</a>
+<% } %>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th width="5%">STT</th>
+      <th>Tên</th>
+      <% if (req.can('roles.update')) { %>
+      <th width="5%">Sửa</th>
+      <% } %> <% if (req.can('roles.delete')) { %>
+      <th width="5%">Xóa</th>
+      <% } %>
+    </tr>
+  </thead>
+  <tbody>
+    <% roles.forEach((role, index) => { %>
+    <tr>
+      <td><%= index+1 %></td>
+      <td><%= role.name %></td>
+      <% if (req.can('roles.update')) { %>
+      <td>
+        <a href="/roles/edit/<%= role.id %>" class="btn btn-warning">Sửa</a>
+      </td>
+      <% } %> <% if (req.can('roles.delete')) { %>
+      <td>
+        <form
+          action="/roles/delete/<%= role.id %>"
+          method="post"
+          onsubmit="return confirm('Bạn chắc không?')"
+        >
+          <button class="btn btn-danger">Xóa</button>
+        </form>
+      </td>
+      <% } %>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

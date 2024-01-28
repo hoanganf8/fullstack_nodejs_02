@@ -4,6 +4,7 @@ const User = model.User;
 const Phone = model.Phone;
 const Post = model.Post;
 const Course = model.Course;
+const Role = model.Role;
 const { Op } = require("sequelize");
 module.exports = {
   index: async (req, res) => {
@@ -40,10 +41,10 @@ module.exports = {
       where: filters,
       limit,
       offset,
-      include: {
-        model: Phone,
-        as: "phone",
-      },
+      // include: {
+      //   model: Phone,
+      //   as: "phone",
+      // },
     });
     const totalPage = Math.ceil(count / limit);
 
@@ -147,5 +148,35 @@ module.exports = {
       force: true,
     });
     return res.redirect(`/users`);
+  },
+  permission: async (req, res) => {
+    const { id } = req.params;
+    const roles = await Role.findAll({
+      order: [["id", "desc"]],
+    });
+    const user = await User.findByPk(id, {
+      include: {
+        model: Role,
+        as: "roles",
+      },
+    });
+    res.render("users/permission", { roles, user });
+  },
+  handlePermission: async (req, res) => {
+    let { roles } = req.body;
+    const { id } = req.params;
+    const user = await User.findByPk(id);
+    if (!roles) {
+      roles = [];
+    }
+    roles = Array.isArray(roles) ? roles : [roles];
+    if (roles.length && user) {
+      const roleInstance = await Promise.all(
+        roles.map((roleId) => Role.findByPk(roleId)),
+      );
+      await user.setRoles(roleInstance);
+    }
+
+    return res.redirect("/users/permission/" + id);
   },
 };

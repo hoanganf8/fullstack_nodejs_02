@@ -1,0 +1,93 @@
+<h1>Cập nhật vai trò</h1>
+<form action="" method="post">
+  <div class="mb-3">
+    <label for="">Tên</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      placeholder="Tên..."
+      required
+      value="<%= role.name %>"
+    />
+  </div>
+  <label for="">Quyền</label>
+  <table class="table table-bordered">
+    <tr>
+      <th width="20%">Chức năng</th>
+      <th>Quyền</th>
+    </tr>
+    <tr>
+      <td>Quản lý người dùng</td>
+      <td>
+        <div class="row">
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="users.read" <%=
+              isPermission(role.permissions, 'users.read') ? 'checked': '' %>/>
+              Xem
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="users.create" <%=
+              isPermission(role.permissions, 'users.create') ? 'checked': ''
+              %>/> Thêm
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="users.update" <%=
+              isPermission(role.permissions, 'users.update') ? 'checked': ''
+              %>/> Sửa
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="users.delete" <%=
+              isPermission(role.permissions, 'users.delete') ? 'checked': ''
+              %>/> Xóa
+            </label>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Quản lý vai trò</td>
+      <td>
+        <div class="row">
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="roles.read" <%=
+              isPermission(role.permissions, 'roles.read') ? 'checked': '' %>/>
+              Xem
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="roles.create" <%=
+              isPermission(role.permissions, 'roles.create') ? 'checked': ''
+              %>/> Thêm
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="roles.update" <%=
+              isPermission(role.permissions, 'roles.update') ? 'checked': ''
+              %>/> Sửa
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="roles.delete" <%=
+              isPermission(role.permissions, 'roles.delete') ? 'checked': ''
+              %>/> Xóa
+            </label>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <button class="btn btn-primary">Lưu</button>
+  <a href="/roles" class="btn btn-danger">Hủy</a>
+</form>

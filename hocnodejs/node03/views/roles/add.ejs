@@ -1,0 +1,84 @@
+<h1>Thêm vai trò</h1>
+<form action="" method="post">
+  <div class="mb-3">
+    <label for="">Tên</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      placeholder="Tên..."
+      required
+    />
+  </div>
+  <label for="">Quyền</label>
+  <table class="table table-bordered">
+    <tr>
+      <th width="20%">Chức năng</th>
+      <th>Quyền</th>
+    </tr>
+    <tr>
+      <td>Quản lý người dùng</td>
+      <td>
+        <div class="row">
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="users.read" />
+              Xem
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="users.create" />
+              Thêm
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="users.update" />
+              Sửa
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="users.delete" />
+              Xóa
+            </label>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Quản lý vai trò</td>
+      <td>
+        <div class="row">
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="roles.read" />
+              Xem
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="roles.create" />
+              Thêm
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="roles.update" />
+              Sửa
+            </label>
+          </div>
+          <div class="col-3">
+            <label>
+              <input type="checkbox" name="permissions" value="roles.delete" />
+              Xóa
+            </label>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <button class="btn btn-primary">Lưu</button>
+  <a href="/roles" class="btn btn-danger">Hủy</a>
+</form>
