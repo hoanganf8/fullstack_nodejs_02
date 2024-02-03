@@ -8,6 +8,7 @@ const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
+const cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -20,6 +21,18 @@ const authMiddleware = require("./middlewares/auth.middleware");
 const guestMiddleware = require("./middlewares/guest.middleware");
 
 var app = express();
+var whitelist = ["http://127.0.0.1:63696"];
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 
 app.use(
   session({

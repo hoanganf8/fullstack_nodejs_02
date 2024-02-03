@@ -46,6 +46,7 @@ module.exports = (sequelize, DataTypes) => {
       password: DataTypes.STRING(100),
       status: DataTypes.BOOLEAN,
       provider_id: DataTypes.INTEGER,
+      refresh_token: DataTypes.STRING,
     },
     {
       sequelize,
