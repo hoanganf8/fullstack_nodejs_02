@@ -24,6 +24,11 @@ var app = express();
 var whitelist = ["http://127.0.0.1:63696"];
 var corsOptions = {
   origin: function (origin, callback) {
+    const mode = process.env.NODE_ENV || "development";
+    if (mode === "development") {
+      return callback(null, true);
+    }
+
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -32,7 +37,7 @@ var corsOptions = {
   },
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(
   session({
@@ -68,7 +73,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/api", apiRouter);
+app.use("/api", cors(corsOptions), apiRouter);
 app.use("/auth", guestMiddleware, authRouter);
 app.use(authMiddleware);
 app.use("/", indexRouter);
